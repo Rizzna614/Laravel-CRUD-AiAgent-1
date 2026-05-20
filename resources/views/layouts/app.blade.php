@@ -16,8 +16,8 @@
             <header class="w-full max-w-4xl mx-auto px-6 py-4">
                 <nav class="flex items-center justify-between">
                     <div class="flex items-center gap-6">
-                        <a href="{{ route('products.index') }}" class="text-lg font-medium">Products</a>
-                        <a href="{{ route('contact.create') }}" class="link-muted text-sm">Contact</a>
+                        <a href="{{ route('products.index') }}" class="link-muted text-sm">Products</a>
+                        <a href="{{ route('contact.index') }}" class="link-muted text-sm">Contact</a>
                     </div>
                 </nav>
             </header>

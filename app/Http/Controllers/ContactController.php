@@ -9,6 +9,13 @@ use Illuminate\View\View;
 
 class ContactController extends Controller
 {
+    public function index(): View
+    {
+        $contacts = Contact::latest()->paginate(10);
+
+        return view('contacts.index', compact('contacts'));
+    }
+
     public function create(): View
     {
         return view('contacts.create');
