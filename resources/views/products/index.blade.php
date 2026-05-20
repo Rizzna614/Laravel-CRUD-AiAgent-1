@@ -49,6 +49,8 @@
     </div>
 
     <div class="mt-6">
-        {{ $products->links() }}
+        @if ($products instanceof \Illuminate\Pagination\LengthAwarePaginator)
+            {{ $products->links() }}
+        @endif
     </div>
 @endsection

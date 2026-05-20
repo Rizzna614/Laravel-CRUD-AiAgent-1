@@ -11,9 +11,13 @@ class ProductController extends Controller
 {
     public function index(Request $request): View
     {
-        $limit = max(1, min(100, (int) $request->query('limit', 10)));
+        if ($request->has('limit')) {
+            $limit = max(1, min(100, (int) $request->query('limit')));
 
-        $products = Product::latest()->paginate($limit);
+            $products = Product::latest()->take($limit)->get();
+        } else {
+            $products = Product::latest()->paginate(10);
+        }
 
         return view('products.index', compact('products'));
     }
