@@ -53,9 +53,10 @@ class ProductController extends Controller
     public function update(Request $request, Product $product): RedirectResponse
     {
         $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'numeric', 'min:0'],
+            'name' => ['sometimes', 'required', 'string', 'max:255'],
+            'price' => ['sometimes', 'required', 'numeric', 'min:0'],
             'description' => ['nullable', 'string'],
+            'status' => ['nullable', 'in:available,unavailable,unknown'],
         ]);
 
         $product->update($validated);

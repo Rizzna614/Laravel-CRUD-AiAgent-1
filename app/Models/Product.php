@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['name', 'price', 'description'])]
+#[Fillable(['name', 'price', 'description', 'status'])]
 class Product extends Model
 {
     /** @use HasFactory<ProductFactory> */
@@ -22,6 +22,7 @@ class Product extends Model
     {
         return [
             'price' => 'decimal:2',
+            'status' => 'string',
         ];
     }
 }

@@ -21,6 +21,17 @@ class ProductFactory extends Factory
             'name' => fake()->word(),
             'price' => fake()->randomFloat(2, 1, 1000),
             'description' => fake()->sentence(),
+            'status' => 'unknown',
         ];
+    }
+
+    public function available(): static
+    {
+        return $this->state(['status' => 'available']);
+    }
+
+    public function unavailable(): static
+    {
+        return $this->state(['status' => 'unavailable']);
     }
 }

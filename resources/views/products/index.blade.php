@@ -15,6 +15,7 @@
                     <th class="table-header">Name</th>
                     <th class="table-header">Price</th>
                     <th class="table-header hidden md:table-cell">Description</th>
+                    <th class="table-header hidden md:table-cell">Status</th>
                     <th class="table-header text-right">Actions</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                         <td class="table-cell-muted hidden md:table-cell truncate max-w-xs">
                             {{ $product->description }}
                         </td>
+                        <td class="table-cell-muted hidden md:table-cell capitalize">{{ $product->status }}</td>
                         <td class="table-cell text-right">
                             <a href="{{ route('products.edit', $product) }}" class="link-blue mr-3">Edit</a>
                             <form action="{{ route('products.destroy', $product) }}" method="POST" class="inline">
@@ -41,7 +43,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="empty-state">No products found.</td>
+                        <td colspan="5" class="empty-state">No products found.</td>
                     </tr>
                 @endforelse
             </tbody>
