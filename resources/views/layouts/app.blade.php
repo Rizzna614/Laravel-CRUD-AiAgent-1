@@ -18,6 +18,8 @@
                     <div class="flex items-center gap-6">
                         <a href="{{ route('products.index') }}" class="link-muted text-sm">Products</a>
                         <a href="{{ route('contact.index') }}" class="link-muted text-sm">Contact</a>
+                        <a href="{{ route('about') }}" class="link-muted text-sm">About</a>
+                        <a href="{{ route('colors') }}" class="link-muted text-sm">Colors</a>
                     </div>
                 </nav>
             </header>
