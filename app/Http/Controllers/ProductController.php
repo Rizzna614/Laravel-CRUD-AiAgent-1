@@ -9,9 +9,11 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $products = Product::latest()->paginate(10);
+        $limit = max(1, min(100, (int) $request->query('limit', 10)));
+
+        $products = Product::latest()->paginate($limit);
 
         return view('products.index', compact('products'));
     }
